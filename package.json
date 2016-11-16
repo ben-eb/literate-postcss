@@ -1,0 +1,84 @@
+{
+  "name": "literate-postcss",
+  "version": "0.0.0",
+  "description": "Write CSS documentation with Markdown and then transform it into CSS.",
+  "main": "dist/index.js",
+  "files": [
+    "LICENSE-MIT",
+    "dist"
+  ],
+  "scripts": {
+    "contributorAdd": "all-contributors add",
+    "contributorGenerate": "all-contributors generate",
+    "docs": "documentation build src -f html -o docs --name literate-postcss",
+    "pretest": "eslint src && flow check",
+    "prepublish": "npm run readme && del-cli dist && rollup -c rollup.config.js",
+    "readme": "documentation readme src --section 'API'",
+    "report": "nyc report --reporter=html",
+    "test": "cross-env BABEL_ENV=test nyc ava",
+    "test-012": "cross-env BABEL_ENV=test nyc ava"
+  },
+  "keywords": [
+    "css",
+    "docs",
+    "documentation",
+    "markdown",
+    "postcss",
+    "postcss-plugin",
+    "remark",
+    "styles"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "all-contributors-cli": "^3.0.6",
+    "ava": "^0.16.0",
+    "babel-cli": "^6.5.1",
+    "babel-core": "^6.5.1",
+    "babel-plugin-istanbul": "^2.0.0",
+    "babel-plugin-transform-flow-strip-types": "^6.8.0",
+    "babel-preset-es2015": "^6.0.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-register": "^6.9.0",
+    "cross-env": "^2.0.0",
+    "del-cli": "^0.2.0",
+    "documentation": "git+https://git@github.com/documentationjs/documentation.git",
+    "eslint": "^3.0.0",
+    "eslint-config-cssnano": "^3.0.0",
+    "eslint-plugin-babel": "^3.3.0",
+    "eslint-plugin-flow-vars": "^0.5.0",
+    "eslint-plugin-flowtype": "^2.3.0",
+    "eslint-plugin-import": "^2.0.1",
+    "flow-bin": "^0.34.0",
+    "less": "^2.7.1",
+    "nyc": "^8.0.0",
+    "postcss-less-engine": "^0.6.2",
+    "postcss-safe-parser": "^2.0.0",
+    "postcss-scss": "^0.4.0",
+    "rollup": "^0.36.3",
+    "rollup-plugin-babel": "^2.6.1",
+    "sugarss": "^0.2.0"
+  },
+  "homepage": "https://github.com/ben-eb/literate-postcss",
+  "author": {
+    "name": "Ben Briggs",
+    "email": "beneb.info@gmail.com",
+    "url": "http://beneb.info"
+  },
+  "repository": "ben-eb/literate-postcss",
+  "dependencies": {
+    "postcss": "^5.2.5",
+    "remark": "^6.2.0",
+    "remark-comment-blocks": "^2.0.1"
+  },
+  "ava": {
+    "babel": "inherit",
+    "require": "babel-register"
+  },
+  "eslintConfig": {
+    "extends": "cssnano/flow"
+  },
+  "nyc": {
+    "sourceMap": false,
+    "instrument": false
+  }
+}
