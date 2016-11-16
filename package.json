@@ -1,6 +1,6 @@
 {
   "name": "literate-postcss",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Write CSS documentation with Markdown and then transform it into CSS.",
   "main": "dist/index.js",
   "files": [
