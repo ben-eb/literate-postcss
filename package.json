@@ -7,6 +7,9 @@
     "LICENSE-MIT",
     "dist"
   ],
+  "engines": {
+    "node": ">=4"
+  },
   "scripts": {
     "contributorAdd": "all-contributors add",
     "contributorGenerate": "all-contributors generate",
@@ -15,8 +18,7 @@
     "prepublish": "npm run readme && del-cli dist && rollup -c rollup.config.js",
     "readme": "documentation readme src --section 'API'",
     "report": "nyc report --reporter=html",
-    "test": "cross-env BABEL_ENV=test nyc ava",
-    "test-012": "cross-env BABEL_ENV=test nyc ava"
+    "test": "cross-env BABEL_ENV=test nyc ava"
   },
   "keywords": [
     "css",
